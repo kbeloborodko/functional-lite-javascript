@@ -33,7 +33,6 @@
 
   function addn (...args) {
     args.reduce(function (prev, current) {
-      console.log(prev, current);
       return add2(prev, current);
     });
   }
