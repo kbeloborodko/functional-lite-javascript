@@ -12,3 +12,9 @@ function add (x, y) {
 
 console.log('Sum of the random numbers is: ' + add(returnRandomNumber1(), returnRandomNumber2()));
 
+function add2 (func1, func2) {
+  return add(func1(), func2());
+}
+
+console.log('Sum of the random numbers using add2 function is: ' + add(returnRandomNumber1(), returnRandomNumber2()));
+
