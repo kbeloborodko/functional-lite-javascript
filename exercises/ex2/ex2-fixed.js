@@ -7,4 +7,4 @@ function foo(x, y) {
 var x = foo(3,4);
 
 console.log(x());  // 7
-console.log(x())  // 7
+console.log(x());  // 7
