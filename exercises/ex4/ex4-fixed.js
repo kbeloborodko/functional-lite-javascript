@@ -32,12 +32,14 @@
   console.log('A random number using the returnRandomFunction utility: ' + randomNumberFunc());
 
   function addn (...args) {
-    args.reduce(function (prev, current) {
-      return add2(prev, current);
-    });
+    return args.slice(1).reduce(function (prev, current) {
+      return function () {
+        return add2(prev, current);
+      }
+    }, args[0])();
   }
 
-  console.log('A sum of 3 random numbers using addn function: ' + addn(returnRandomNumber1, returnRandomNumber2));
+  console.log('A sum of 3 random numbers using addn function: ' + addn(returnRandomNumber1, returnRandomNumber2, returnRandomNumber1));
 
   var evenOddArray = [1, 2, 2, 3, 2, 4, 2, 5, 6, 7];
   var filteredEvenOddArray = evenOddArray.filter(function (item) {
